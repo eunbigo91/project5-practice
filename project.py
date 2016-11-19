@@ -42,7 +42,7 @@ def newMenuItem(restaurant_id):
         flash("New menu item created!")
         return redirect(url_for('restaurantMenu', restaurant_id=restaurant_id))
     else:
-        return render_template('newmenuitem.html', restaurant_id=restaurant_id)
+        return render_template('newMenuItem.html', restaurant_id=restaurant_id)
 
 @app.route('/restaurants/<int:restaurant_id>/<int:menu_id>/edit/', methods=['GET', 'POST'])
 def editMenuItem(restaurant_id, menu_id):
@@ -55,7 +55,7 @@ def editMenuItem(restaurant_id, menu_id):
         flash(str(editItem.name) + " has been edited!")
         return redirect(url_for('restaurantMenu', restaurant_id=restaurant_id))
     else:
-        return render_template('editmenuitem.html', restaurant_id=restaurant_id, menu_id=menu_id, item=editItem)
+        return render_template('editMenuItem.html', restaurant_id=restaurant_id, menu_id=menu_id, item=editItem)
 
 @app.route('/restaurants/<int:restaurant_id>/<int:menu_id>/delete/', methods=['GET', 'POST'])
 def deleteMenuItem(restaurant_id, menu_id):
@@ -66,7 +66,7 @@ def deleteMenuItem(restaurant_id, menu_id):
         flash(str(deleteItem.name) + " has been deleted!")
         return redirect(url_for('restaurantMenu', restaurant_id=restaurant_id))
     else:
-        return render_template('deletemenuitem.html', item=deleteItem)
+        return render_template('deleteMenuItem.html', item=deleteItem)
 
 
 if __name__ == '__main__':
