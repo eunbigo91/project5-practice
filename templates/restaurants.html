@@ -1,0 +1,26 @@
+<html>
+
+<body>
+
+<div class = 'pane'>
+    <div class = 'header'>
+        <h1> Restaurants </h1>
+    </div>
+    <a href='{{url_for('newRestaurant')}}'> Create New Restaurant </a>
+
+    {% for r in restaurants %}
+
+    <div class = 'nameAndPrice'>
+        <span class = 'name'><p>{{r.name}}</p></span>
+    </div>
+
+    <div class = "editdeletepane">
+        <a href='{{url_for('editRestaurant', restaurant_id=r.id)}}'>Edit </a>
+        <a href='{{url_for('deleteRestaurant', restaurant_id=r.id)}}'>Delete </a>
+    </div>
+
+
+    {% endfor %}
+</div>
+</body>
+</html>
