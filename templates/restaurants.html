@@ -25,7 +25,7 @@
     {% for r in restaurants %}
     <div class='list'>
         <div class = 'restaurant_name'>
-            {{r.name}}
+            <a href='{{url_for('showMenu', restaurant_id=r.id)}}'>{{r.name}}</a>
 
         <div class = "editdeletepane">
             <a href='{{url_for('editRestaurant', restaurant_id=r.id)}}'>Edit </a> |
