@@ -6,17 +6,18 @@ body {
 }
 
 h1, h2, h3, h4 {
-    color: #FFFFFF;
+    color: #333;
 }
 
-h1, h2 {
-    font-family: 'Georgia', serif;
+h1 {
+    font-family: 'Kaushan Script', cursive;
     margin: 0;
 }
 
 h1 {
     border-bottom: 2px solid #eee;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 40px;
 }
 
 h2 {
@@ -24,21 +25,18 @@ h2 {
 }
 
 p, dd, dt {
-    color: #CCCCCC;
+
 }
 
 a {
     text-decoration: none;
-    color:#FFFFCC;
-    font-size: .75em;}
+    color:#333;
+}
 
 .pane {
-    border: 2px solid;
-    border-radius: 25px;
     padding: 8px;
     margin: 5px;
-    border-color: #999999;
-    background-color: #333333
+    background-color: #FFF;
 }
 
 .header {
@@ -46,20 +44,91 @@ a {
     text-align: center;
 }
 
+.new_restaurant, .new_menu{
+    font-family: 'Cormorant Garamond', serif;
+    text-align: center;
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+.restaurant_name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3em;
+    text-align: center;
+    margin: 20px;
+}
+
 .name {
+    font-family: 'Cormorant Garamond', serif;
     width:50%;
     display: inline-block;
     float: left;
+    color: #bb8c00;
 }
 
-.description {}
+.description {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1em;
+    color: #333;
+    width: 90%;
+}
 .price {
     text-align: right;
     width:50%;
     float: right;
+    color: #bb8c00;
 }
-.editdeletepane{}
 
+.editdeletepane{
+    font-size: .6em;
+    text-align: right;
+    position: absolute;
+    right: 0px;
+    bottom: 5px;
+}
+
+.editdelete_menu{
+    font-size: .75em;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    text-align: right;
+}
+
+.list {
+    position: relative;
+}
 .flash {
     background: #cee5F5;
+}
+
+.new {
+    font-family: 'Cormorant Garamond', serif;
+    text-align: center;
+}
+
+.input_box{
+    width: 30%;
+    height: 50px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    text-align: center;
+    border: .01em solid #b1a503;
+}
+
+.button {
+   font-family: 'Cormorant Garamond', serif;
+   text-decoration: none;
+   vertical-align: middle;
+   border: .01em solid #a0a0a0;
+   padding: 5px;
+   font-size: 13px;
+   background-color: #fff;
+}
+
+
+.delete_message {
+    color: yellow;
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
 }

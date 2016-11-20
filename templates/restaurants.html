@@ -1,25 +1,29 @@
 <html>
-
+<head>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Cormorant+Garamond" rel="stylesheet">
+</head>
 <body>
 
 <div class = 'pane'>
     <div class = 'header'>
         <h1> Restaurants </h1>
     </div>
-    <a href='{{url_for('newRestaurant')}}'> Create New Restaurant </a>
-
+    <div class='new_restaurant'>
+        <a href='{{url_for('newRestaurant')}}'> + New Restaurant + </a>
+    </div>
     {% for r in restaurants %}
 
-    <div class = 'nameAndPrice'>
-        <span class = 'name'><p>{{r.name}}</p></span>
+    <div class='list'>
+        <div class = 'restaurant_name'>
+            {{r.name}}
+
+        <div class = "editdeletepane">
+            <a href='{{url_for('editRestaurant', restaurant_id=r.id)}}'>Edit </a> |
+            <a href='{{url_for('deleteRestaurant', restaurant_id=r.id)}}'>Delete </a>
+        </div>
+        </div>
     </div>
-
-    <div class = "editdeletepane">
-        <a href='{{url_for('editRestaurant', restaurant_id=r.id)}}'>Edit </a>
-        <a href='{{url_for('deleteRestaurant', restaurant_id=r.id)}}'>Delete </a>
-    </div>
-
-
     {% endfor %}
 </div>
 </body>
