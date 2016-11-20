@@ -12,8 +12,17 @@
     <div class='new_restaurant'>
         <a href='{{url_for('newRestaurant')}}'> + New Restaurant + </a>
     </div>
-    {% for r in restaurants %}
+    <div class = 'flash'>
+        {% with messages= get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <strong> {{message}} </strong>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
 
+    {% for r in restaurants %}
     <div class='list'>
         <div class = 'restaurant_name'>
             {{r.name}}

@@ -98,8 +98,11 @@ a {
 .list {
     position: relative;
 }
+
 .flash {
-    background: #cee5F5;
+    font-family: 'Cormorant Garamond', serif;
+    background: #fffbda;
+    text-align: center;
 }
 
 .new {
