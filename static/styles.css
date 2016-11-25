@@ -119,6 +119,16 @@ a {
     border: .01em solid #b1a503;
 }
 
+.description_area{
+    width: 61%;
+    height: 80px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    text-align: center;
+    padding: 5px;
+    border: .01em solid #b1a503;
+}
+
 .button {
    font-family: 'Cormorant Garamond', serif;
    text-decoration: none;
