@@ -3,6 +3,7 @@ body {
     background-color: #333333;
     width: 90%;
     margin: auto;
+    font-family: 'Cormorant Garamond', serif;
 }
 
 h1, h2, h3, h4 {
@@ -12,9 +13,6 @@ h1, h2, h3, h4 {
 h1 {
     font-family: 'Kaushan Script', cursive;
     margin: 0;
-}
-
-h1 {
     border-bottom: 2px solid #eee;
     margin-bottom: 15px;
     font-size: 40px;
@@ -34,7 +32,7 @@ a {
 }
 
 .pane {
-    padding: 8px;
+    padding: .8em 2em;
     margin: 5px;
     background-color: #FFF;
 }
@@ -45,21 +43,18 @@ a {
 }
 
 .new_restaurant, .new_menu{
-    font-family: 'Cormorant Garamond', serif;
     text-align: center;
     font-size: 1em;
     margin-bottom: 15px;
 }
 
 .restaurant_name {
-    font-family: 'Cormorant Garamond', serif;
     font-size: 1.3em;
     text-align: center;
     margin: 20px;
 }
 
 .name {
-    font-family: 'Cormorant Garamond', serif;
     width:50%;
     display: inline-block;
     float: left;
@@ -67,7 +62,6 @@ a {
 }
 
 .description {
-    font-family: 'Cormorant Garamond', serif;
     font-size: 1em;
     color: #333;
     width: 90%;
@@ -100,20 +94,17 @@ a {
 }
 
 .flash {
-    font-family: 'Cormorant Garamond', serif;
     background: #fffbda;
     text-align: center;
 }
 
 .new {
-    font-family: 'Cormorant Garamond', serif;
     text-align: center;
 }
 
 .input_box{
     width: 30%;
     height: 50px;
-    font-family: 'Cormorant Garamond', serif;
     font-size: 15px;
     text-align: center;
     border: .01em solid #b1a503;
@@ -122,7 +113,6 @@ a {
 .description_area{
     width: 61%;
     height: 80px;
-    font-family: 'Cormorant Garamond', serif;
     font-size: 15px;
     text-align: center;
     padding: 5px;
@@ -130,7 +120,6 @@ a {
 }
 
 .button {
-   font-family: 'Cormorant Garamond', serif;
    text-decoration: none;
    vertical-align: middle;
    border: .01em solid #a0a0a0;
@@ -143,5 +132,4 @@ a {
 .delete_message {
     color: yellow;
     text-align: center;
-    font-family: 'Cormorant Garamond', serif;
 }

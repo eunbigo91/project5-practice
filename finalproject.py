@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, redirect, url_for, jsonify, flash
+from flask import Flask, render_template, request
+from flask import redirect, url_for, jsonify, flash
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from database_setup import Base, Restaurant, MenuItem
@@ -115,7 +116,7 @@ def editMenuItem(restaurant_id, menu_id):
     # This page is for editing menu item
     editItem = session.query(MenuItem).filter_by(id=menu_id).one()
     if request.method == 'POST':
-        if request.form['name'] and request.form['price'] and request.form['description']:
+        if request.form['name'] and request.form['price']:
             editItem.name = request.form['name']
             editItem.price = request.form['price']
             editItem.description = request.form['description']

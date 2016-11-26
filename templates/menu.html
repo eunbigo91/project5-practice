@@ -31,7 +31,7 @@
 
     <div class='list'>
         <div class = 'description'>
-            <span class = 'description'><p>{{i.description}}</p></span>
+            <span class = 'description'><p>{% if i.description %} {{i.description}} {% else %} None {% endif %}</p></span>
                 <div class = "editdelete_menu">
                     <a href='{{url_for('editMenuItem', restaurant_id=restaurant.id, menu_id=i.id)}}'>Edit</a></br>
                     <a href='{{url_for('deleteMenuItem', restaurant_id=restaurant.id, menu_id=i.id)}}'>Delete</a>
