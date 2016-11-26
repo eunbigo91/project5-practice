@@ -1,15 +1,16 @@
+<!DOCTYPE HTML SYSTEM>
 <html>
 <head>
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 </head>
-<body>
 
+<body>
 <div class = 'pane'>
     <div class = 'header'>
         <h1>{{restaurant.name}}</h1>
     </div>
     <div class= 'new_menu'>
-        <a href='{{url_for('newMenuItem', restaurant_id=restaurant.id)}}'> + Create New Item + </a>
+        <a href="{{url_for('newMenuItem', restaurant_id=restaurant.id)}}"> + Create New Item + </a>
     </div>
 
     <div class = 'flash'>
@@ -33,8 +34,8 @@
         <div class = 'description'>
             <span class = 'description'><p>{% if i.description %} {{i.description}} {% else %} None {% endif %}</p></span>
                 <div class = "editdelete_menu">
-                    <a href='{{url_for('editMenuItem', restaurant_id=restaurant.id, menu_id=i.id)}}'>Edit</a></br>
-                    <a href='{{url_for('deleteMenuItem', restaurant_id=restaurant.id, menu_id=i.id)}}'>Delete</a>
+                    <a href="{{url_for('editMenuItem', restaurant_id=restaurant.id, menu_id=i.id)}}">Edit</a></br>
+                    <a href="{{url_for('deleteMenuItem', restaurant_id=restaurant.id, menu_id=i.id)}}">Delete</a>
                 </div>
         </div>
     </div>
