@@ -10,7 +10,7 @@
         <h1> Restaurants </h1>
     </div>
     <div class='new_restaurant'>
-        <a href='{{url_for('newRestaurant')}}'> + New Restaurant + </a>
+        <a href="{{url_for('newRestaurant')}}"> + New Restaurant + </a>
     </div>
     <div class = 'flash'>
         {% with messages= get_flashed_messages() %}
@@ -25,11 +25,11 @@
     {% for r in restaurants %}
     <div class='list'>
         <div class = 'restaurant_name'>
-            <a href='{{url_for('showMenu', restaurant_id=r.id)}}'>{{r.name}}</a>
+            <a href="{{url_for('showMenu', restaurant_id=r.id)}}">{{r.name}}</a>
 
         <div class = "editdeletepane">
-            <a href='{{url_for('editRestaurant', restaurant_id=r.id)}}'>Edit </a> |
-            <a href='{{url_for('deleteRestaurant', restaurant_id=r.id)}}'>Delete </a>
+            <a href="{{url_for('editRestaurant', restaurant_id=r.id)}}">Edit </a> |
+            <a href="{{url_for('deleteRestaurant', restaurant_id=r.id)}}">Delete </a>
         </div>
         </div>
     </div>
