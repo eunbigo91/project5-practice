@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 from flask import redirect, url_for, jsonify, flash
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from database_setup import Base, Restaurant, MenuItem
+from database_setup import Base, Restaurant, MenuItem, User
 
 from flask import session as login_session
 import random, string
@@ -188,8 +188,8 @@ def newRestaurant():
     if 'username' not in login_session:
         return redirect('/login')
     if request.method == 'POST':
-        newRestaurant = Restaurant(
-            name=request.form['name'])
+        newRestaurant = Restaurant(name=request.form['name'],
+                                   user_id=login_session['user_id'])
         session.add(newRestaurant)
         session.commit()
         flash(str(newRestaurant.name) + " has been created!")
@@ -250,7 +250,7 @@ def newMenuItem(restaurant_id):
         newItem = MenuItem(
             name=request.form['name'], price=request.form['price'],
             description=request.form['description'],
-            restaurant_id=restaurant_id)
+            restaurant_id=restaurant_id, user_id=login_session['user_id'])
         session.add(newItem)
         session.commit()
         flash(str(newItem.name) + " has been created!")
@@ -296,6 +296,27 @@ def deleteMenuItem(restaurant_id, menu_id):
     else:
         return render_template('deleteMenuItem.html', item=deleteItem)
 
+
+def getUserID(email):
+    try:
+        user = session.query(User).filter_by(email=email).one()
+        return user.id
+    except:
+        return None
+
+
+def getUserInfo(user_id):
+    user = session.query(User).filter_by(id = user_id).one()
+    return user
+
+
+def createUser(login_session):
+    newUser = User(name = login_session['username'], email =
+        login_session['email'], picture = login_session['picture'])
+    session.add(newUser)
+    session.commit()
+    user = session.query(User).filter_by(email = login_session['email']).one()
+    return user.id
 
 if __name__ == '__main__':
     app.secret_key = 'super_secret_key'
