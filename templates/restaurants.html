@@ -8,6 +8,11 @@
 <div class = 'pane'>
     <div class = 'header'>
         <h1> Restaurants </h1>
+        {%if 'username' not in session %}
+            <a href="{{url_for('showLogin')}}">Click Here to Login </a>
+        {% else %}
+            <a href="{{url_for('disconnect')}}">Logout </a>
+        {% endif %}
     </div>
     <div class='new_restaurant'>
         <a href="{{url_for('newRestaurant')}}"> + New Restaurant + </a>

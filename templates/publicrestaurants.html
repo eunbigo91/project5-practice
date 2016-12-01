@@ -9,6 +9,11 @@
 <div class = 'pane'>
     <div class = 'header'>
         <h1> Restaurants </h1>
+        {%if 'username' not in session %}
+            <a href="{{url_for('showLogin')}}">Click Here to Login </a>
+        {% else %}
+            <a href="{{url_for('disconnect')}}">Logout </a>
+        {% endif %}
     </div>
     <div class = 'flash'>
         {% with messages = get_flashed_messages() %}
